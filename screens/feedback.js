@@ -30,9 +30,9 @@ const feedback = () => {
                 {feedback.map((index, i) => (
                     <View key={i} style={styles.item}>
                         <Text>NAME: {index.name}</Text> 
-                        <Text >KNOWLEDGE OUT OF {index.knowledge}/5</Text>
-                        <Text>ENVIRONMENT OF THE SALON : {index.environment}</Text>
-                        <Text>SATISFACTION : {index.environment}</Text>
+                        <Text >KNOWLEDGE OUT OF {index.knowledge}/3</Text>
+                        <Text>ENVIRONMENT OF THE SALON : {index.environment}/3</Text>
+                        <Text>SATISFACTION : {index.environment}/3</Text>
                         <Text>REVIEW: {index.value}</Text>
                     </View>))
                 }   

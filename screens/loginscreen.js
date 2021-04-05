@@ -20,9 +20,9 @@ const loginscreen = ({navigation}) => {
     const [REACTIONS, setReactions] = useState([
         
         { id: 1, label: "Happy", src: require('../screens/images/smile.png'), bigSrc: require('../screens/images/smile_big.png') },
-        { id: 2, label: "Neutral", src: require('../screens/images/ambitious.png'), bigSrc: require('../screens/images/ambitious_big.png') },
+        { id: 2, label: "Satisfactory", src: require('../screens/images/ambitious.png'), bigSrc: require('../screens/images/ambitious_big.png') },
         { id: 3, label: "Not Happy", src: require('../screens/images/sad.png'), bigSrc: require('../screens/images/sad_big.png') },
-        { id: 4,label: "Never Again", src: require('../screens/images/worried.png'), bigSrc: require('../screens/images/worried_big.png') },
+        // { id: 4,label: "Never Again", src: require('../screens/images/worried.png'), bigSrc: require('../screens/images/worried_big.png') },
       ]);
     
     let satis = (e1)=>{
