@@ -37,14 +37,14 @@ const feedback = () => {
 
     return (
         <View>
-            
-            <Input placeholder = "Pin" 
+            <View style={styles.inputContainer}>
+            <label>PIN: </label><Input placeholder = "enter the pin" 
                     autoFocus 
                     type = 'text'
                     value= {pin}
                     onChangeText = {(pin) => setPin(pin)}
                     />
-            
+            </View>
             <Button style ={styles.button} title = 'View Feedback Data' onPress=  {pinCheck}/>
             
             <ScrollView>
@@ -80,6 +80,16 @@ const styles = StyleSheet.create({
         marginVertical: 8,
         marginHorizontal: 16,
       },
+    inputContainer: {
+        width: 150,
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 10,
+        marginLeft: 540,
+
+
+
+    },
 });
 
 
