@@ -73,7 +73,7 @@ const loginscreen = ({navigation}) => {
                 </View>
         
             <View style={styles.container}>
-            <Text style={{fontFamily:"Times new roman", fontSize: 20, fontWeight: "bold"}}>How satisfied are you with your service today?</Text>
+            <Text style={{fontFamily:"Chalkboard SE", fontSize: 20, fontWeight: "bold"}}>How satisfied are you with your service today?</Text>
             <View style={styles.innercontainer}>{REACTIONS.map(reactions => (
                             <TouchableOpacity key={reactions.id} onPress={()=> satis(reactions.id)} style={{padding: 10, alignItems: 'center',}}>
                             <Image  style={ (satisfaction == reactions.id)? {width: 70, height: 70} : {width: 50, height: 50}}
@@ -102,7 +102,7 @@ const loginscreen = ({navigation}) => {
                     </TouchableOpacity>
             ))}
             </View>
-            <Text style={{fontFamily: "lucida grande",fontSize: 20, fontWeight: "bold"}}>How can we improve? We appreciate all feedback and suggestions</Text>
+            <Text style={{fontFamily: "Chalkboard SE",fontSize: 20, fontWeight: "bold"}}>How can we improve? We appreciate all feedback and suggestions</Text>
             <TextInput
             style={{backgroundColor:"white", width:"100%"}}
                 multiline={true}
