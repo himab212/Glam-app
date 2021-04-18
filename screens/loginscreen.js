@@ -5,6 +5,7 @@ import {StatusBar} from "expo-status-bar";
 import { KeyboardAvoidingView, TouchableOpacity } from 'react-native';
 import {db} from '../firebase';
 import { ScrollView } from 'react-native-gesture-handler';
+import feedback from './feedback';
 
 
 
@@ -35,16 +36,24 @@ const loginscreen = ({navigation}) => {
         setEnvironment(e3)
     }
 
-    const saveName =() => {
+    const saveName =(e) => {
+        e.preventDefault();
         db.collection("users").add({
             name: name,
             satisfaction: satisfaction,
             knowledge: knowledge,
             environment: environment,
             value: value
-
+         
         }).catch((error) => alert(error));
+        setName("");
+        setSatisfaction("");
+        setEnvironment("");
+        setKnowledge("");
+        setValue("");
     } 
+   
+    
     
     const redirect = () => {
         navigation.navigate("feedback")
@@ -111,7 +120,7 @@ const loginscreen = ({navigation}) => {
                 value={value}
                 placeholder={"Enter your review"}/>
         
-            <Button title="SUBMIT" onPress={saveName}></Button>
+            <Button title="SUBMIT" onPress ={saveName}></Button>
         </View>         
                 
         <Button title="Get Feedback results" onPress={redirect}></Button>
