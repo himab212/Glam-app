@@ -15,6 +15,8 @@ const feedback = () => {
     const showFeedback = () => {
         db
         .collection('users')
+        .orderBy('name')
+        .limit(100)
         .get()
         .then(querySnapshot => {
           console.log('total users', querySnapshot.size);
