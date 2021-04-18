@@ -15,7 +15,7 @@ const feedback = () => {
     const showFeedback = () => {
         db
         .collection('users')
-        .orderBy('name')
+        .orderBy('timestamp','desc')
         .limit(100)
         .get()
         .then(querySnapshot => {
@@ -26,7 +26,7 @@ const feedback = () => {
           });
           setFeedback(arr);
         });
-       
+       console.log(feedback)
     } 
 
     const pinCheck = () => {
@@ -35,7 +35,6 @@ const feedback = () => {
         }
     }
 
-   
 
     return (
         <View>
@@ -52,10 +51,11 @@ const feedback = () => {
             <ScrollView>
                 {feedback.map((index, i) => (
                         <View key={i} style={styles.item}>
+                        <Text>TIMESTAMP: {index.timestamp.toString()}</Text>    
                         <Text>NAME: {index.name}</Text> 
                         <Text>KNOWLEDGE OUT OF {index.knowledge}/3</Text>
                         <Text>ENVIRONMENT OF THE SALON : {index.environment}/3</Text>
-                        <Text>SATISFACTION : {index.environment}/3</Text>
+                        <Text>SATISFACTION : {index.satisfaction}/3</Text>
                         <Text>REVIEW: {index.value}</Text>
                     </View>))
                 }   

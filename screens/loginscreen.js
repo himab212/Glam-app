@@ -6,7 +6,7 @@ import { KeyboardAvoidingView, TouchableOpacity } from 'react-native';
 import {db} from '../firebase';
 import { ScrollView } from 'react-native-gesture-handler';
 import feedback from './feedback';
-
+import * as firebase from "firebase";
 
 
 const loginscreen = ({navigation}) => {
@@ -43,8 +43,10 @@ const loginscreen = ({navigation}) => {
             satisfaction: satisfaction,
             knowledge: knowledge,
             environment: environment,
-            value: value
-         
+            value: value,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            
+
         }).catch((error) => alert(error));
         setName("");
         setSatisfaction("");
